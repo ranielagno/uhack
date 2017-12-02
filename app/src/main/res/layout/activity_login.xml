@@ -8,7 +8,8 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent" android:layout_height="match_parent"
-        android:background="@drawable/login_bg">
+        android:background="@drawable/login_bg"
+        >
 
 
         <EditText
@@ -37,32 +38,33 @@
         android:layout_alignEnd="@+id/username_text" />
 
     <Button
-        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/editText5"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
         android:background="@drawable/gradient"
-        android:text="Button"
-        android:layout_below="@+id/editText5"
-        android:layout_centerHorizontal="true" />
+        android:text="L O G I N"
+        android:textColor="@android:color/background_light"
+        android:id="@+id/loginButton" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/signUpId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
+        android:layout_below="@+id/loginButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="Sign Up Here"
         android:textColor="@android:color/holo_red_light" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
+            app:srcCompat="@drawable/laroin"
+            android:id="@+id/imageView"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="117dp"
-            app:srcCompat="@drawable/laroin"
-            android:id="@+id/imageView" />
+            android:layout_marginTop="36dp" />
     </RelativeLayout>
 <!--</ScrollView>-->
