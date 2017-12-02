@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class GameActivity extends AppCompatActivity {
 
     private static final int DAYS_AFTER = 2;
-    private static final String DJANGO_REST = "http://192.168.43.135:8000";
+    private static final String DJANGO_REST = "http://172.16.2.213:8000";
     private static final String PSEI_API = "http://pseapi.com/api/Stock";
     private static final String TAG = "TAG";
 

@@ -34,7 +34,7 @@ import java.net.URL;
 
 public class ActivityLogin extends Fragment {
 
-    public final static String DJANGO_REST = "http://192.168.43.135:8000";
+    public final static String DJANGO_REST = "http://172.16.2.213:8000";
     public final static String TAG = "TAG";
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
