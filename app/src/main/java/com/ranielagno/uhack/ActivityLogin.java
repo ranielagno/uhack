@@ -73,6 +73,7 @@ public class ActivityLogin extends Fragment {
                 String json = jsonObject.toString();
 
                 URL url = new URL(DJANGO_REST + "/accounts/login");
+                Log.d(TAG, DJANGO_REST + "/accounts/login");
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);

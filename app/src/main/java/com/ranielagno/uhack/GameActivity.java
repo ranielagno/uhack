@@ -23,6 +23,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class GameActivity extends AppCompatActivity {
     private static final String DJANGO_REST = "http://172.16.2.213:8000";
     private static final String PSEI_API = "http://pseapi.com/api/Stock";
     private static final String TAG = "TAG";
+    public ArrayList<String> companies;
 
     TextView balance, added_days, company, start_date, start_stock, end_date;
     EditText bet;
@@ -48,7 +50,7 @@ public class GameActivity extends AppCompatActivity {
         bet = (EditText) findViewById(R.id.bet);
 
         GameTask gameTask = new GameTask();
-        gameTask.execute("");
+        gameTask.execute(DAYS_AFTER);
     }
 
     public void lowButtonClicked(View v){
@@ -116,16 +118,19 @@ public class GameActivity extends AppCompatActivity {
         return company;
     }
 
-    //TODO: Parameter DAYS_AFTER
-    private static String[] generateStartEndDate(){
+    private String[] generateStartEndDateandSymbol(){
 
         JSONObject jsonObject = new JSONObject();
-        String arrStartEndDate [] = new String[2];
+        String arrStartEndDate [] = new String[3];
         URL url;
 
         try {
-
+            String symbol = randSymbol(companies);
+            Log.d(TAG, "Find this " + symbol);
             jsonObject.accumulate("range", DAYS_AFTER);
+            jsonObject.accumulate("symbol", symbol);
+            companies.remove(companies.lastIndexOf(symbol));
+            Log.d(TAG, "Arraylist - "+ companies);
             String json = jsonObject.toString();
             url = new URL(DJANGO_REST + "/prediction/date");
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -147,14 +152,15 @@ public class GameActivity extends AppCompatActivity {
             inputStream.close();
             httpURLConnection.disconnect();
 
-            Log.d(TAG, result);
+            Log.d(TAG, "Reader - " + result);
 
             JSONObject reader = new JSONObject(result.toString());
 
             arrStartEndDate [0] = reader.getString("start_date");
             arrStartEndDate [1] = reader.getString("end_date");
+            arrStartEndDate [2] = symbol;
 
-            Log.d(TAG, arrStartEndDate[0] + " - " + arrStartEndDate[1]);
+            Log.d(TAG, arrStartEndDate[0] + " - " + arrStartEndDate[1] + " - " + arrStartEndDate[2]);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -172,17 +178,27 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
-    private void getStartDayReport(String symbol, String start_date){
-        String response = getJSONResponse(PSEI_API + "/" + symbol + "/" + start_date);
-        Log.d(TAG, response);
+    private String randSymbol(ArrayList<String> arr){
+        Random random = new Random();
+        return arr.get(random.nextInt(arr.size() - 1));
     }
 
-    private class GameTask extends AsyncTask<String, Integer, String> {
+    private String getStartDayReport(String symbol, String start_date){
+        String response = getJSONResponse(PSEI_API + "/" + symbol + "/" + start_date);
+        Log.d(TAG, "GetStartDayReport " + response);
+        return response;
+    }
 
+    private class GameTask extends AsyncTask<Integer, Integer, String> {
+
+        String arr [];
         @Override
-        protected String doInBackground(String... params) {
-            getCompanySymbols();
+        protected String doInBackground(Integer... params) {
+            if(companies == null)
+                companies = getCompanySymbols();
 
+            arr = generateStartEndDateandSymbol();
+            String response = getStartDayReport(arr[2], arr[0]);
             return "";
         }
 
@@ -199,6 +215,9 @@ public class GameActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
+            start_date.setText(arr[0]);
+            end_date.setText(arr[1]);
+            company.setText(arr[2]);
         }
     }
 }
