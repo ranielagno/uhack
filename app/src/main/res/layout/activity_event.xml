@@ -14,12 +14,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
         android:text="Visit these exciting events!"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:layout_below="@+id/gameMoneyText"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp" />
 
     <TextView
         android:id="@+id/nameText"
@@ -63,5 +63,47 @@
         android:textColor="@android:color/background_light"
         android:textSize="30sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:text="Seminar Title"
+        android:textColor="?attr/colorControlNormal"
+        android:textSize="12sp"
+        android:layout_below="@+id/textView5"
+        android:layout_alignStart="@+id/nameText" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="Seminar Title"
+        android:textColor="?attr/colorControlNormal"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/eventLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Event Location"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/eventImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/eventLocation"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/textView5"
+        android:layout_marginStart="21dp"
+        android:layout_toStartOf="@+id/textView7"
+        app:srcCompat="@mipmap/ic_launcher" />
 </RelativeLayout>
 </ScrollView>
