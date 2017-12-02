@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,13 +31,32 @@ public class GameActivity extends AppCompatActivity {
     private static final String PSEI_API = "http://pseapi.com/api/Stock";
     private static final String TAG = "TAG";
 
+    TextView balance, added_days, company, start_date, start_stock, end_date;
+    EditText bet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        balance = (TextView) findViewById(R.id.balance);
+        added_days = (TextView) findViewById(R.id.added_days);
+        company = (TextView) findViewById(R.id.company);
+        start_date = (TextView) findViewById(R.id.start_date);
+        start_stock = (TextView) findViewById(R.id.start_stock);
+        end_date = (TextView) findViewById(R.id.end_date);
+        bet = (EditText) findViewById(R.id.bet);
+
         GameTask gameTask = new GameTask();
         gameTask.execute("");
+    }
+
+    public void lowButtonClicked(View v){
+
+    }
+
+    public void highButtonClicked(View v){
+
     }
 
     public String getJSONResponse(String string_url){
