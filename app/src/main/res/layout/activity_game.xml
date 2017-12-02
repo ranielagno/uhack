@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="2GO"
-        android:textColor="black"
+        android:textColor="#000000"
         android:textSize="40dp"
         android:layout_below="@+id/linearLayout4"
         android:layout_alignParentStart="true"
@@ -78,23 +78,25 @@
         android:layout_marginTop="41dp"
         android:layout_below="@+id/company"
         android:layout_alignParentStart="true">
+
         <TextView
-            android:id="@+id/start_stock"
+            android:id="@+id/start_date"
             android:layout_width="110dp"
             android:layout_height="35dp"
             android:layout_marginRight="40dp"
             android:gravity="center"
             android:text="Jan 2, 2017"
-            android:textColor="black"
+            android:textColor="#000000"
             android:textSize="15dp" />
+
         <TextView
-            android:id="@+id/start_date"
+            android:id="@+id/start_stock"
             android:layout_width="110dp"
             android:layout_height="35dp"
             android:layout_marginLeft="40dp"
             android:gravity="center"
             android:text="120"
-            android:textColor="black"
+            android:textColor="#000000"
             android:textSize="15dp" />
     </LinearLayout>
 
@@ -107,14 +109,15 @@
         android:layout_below="@+id/linearLayout3"
         android:layout_alignParentStart="true"
         android:layout_marginTop="50dp">
+
         <TextView
             android:id="@+id/end_date"
             android:layout_width="110dp"
             android:layout_height="35dp"
-            android:gravity="center"
             android:layout_marginRight="40dp"
+            android:gravity="center"
             android:text="Jan 20, 2017"
-            android:textColor="black"
+            android:textColor="#000000"
             android:textSize="15dp" />
 
         <EditText
@@ -145,6 +148,7 @@
             android:layout_height="40dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundcorner"
+            android:onClick="lowButtonClicked"
             android:text="Low" />
 
         <Button
@@ -153,6 +157,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/roundcorner"
+            android:onClick="highButtonClicked"
             android:text="High" />
 
     </LinearLayout>
