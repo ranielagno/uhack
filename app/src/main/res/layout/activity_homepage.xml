@@ -7,30 +7,95 @@
     android:fillViewport="true">-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="300dp"
     android:background="@drawable/gradient_home"
-    >
+    android:id="@+id/relativeLayout">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/nameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="121dp"
         android:fontFamily="sans-serif"
         android:text="Angelo Suinan"
         android:textColor="@android:color/background_light"
-        android:textSize="22sp" />
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/gameMoneyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="220"
+        android:textColor="@android:color/background_light"
+        android:textSize="23sp"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:fontFamily="sans-serif"
+        android:text="Current Game Money"
+        android:textColor="@android:color/background_light"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameText"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
         android:fontFamily="sans-serif"
         android:text="angelosuinan@gmail.com"
         android:textColor="@android:color/background_light"
-        android:textSize="16sp"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        android:textSize="16sp" />
+
+</RelativeLayout>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/pracInvButton"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/seeSemButton"
+        android:layout_below="@+id/seeSemButton"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/roundcorner"
+        android:text="See Seminars"
+        android:textColor="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/seeSemButton"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:background="@drawable/gradient"
+        android:textColor="@android:color/background_light"
+        android:text="Practice Investment"
+        />
+
+
 </RelativeLayout>

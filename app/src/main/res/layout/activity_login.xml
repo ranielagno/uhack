@@ -43,8 +43,8 @@
         android:layout_below="@+id/editText5"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
-        android:background="@drawable/gradient"
         android:text="L O G I N"
+        android:background="@drawable/gradient"
         android:textColor="@android:color/background_light"
         android:id="@+id/loginButton" />
 
