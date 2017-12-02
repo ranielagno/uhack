@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:fillViewport="true">-->
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent" android:layout_height="match_parent"
-        android:background="@drawable/login_bg"
-        >
-
-
-        <EditText
-            android:id="@+id/username_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:width="320dp"
-            android:height="30dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Username"
-            android:layout_marginBottom="225dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/login_bg">
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/username_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="320dp"
+        android:height="30dp"
+        android:ems="10"
+        android:text="admin"
+        android:inputType="textPersonName"
+        android:hint="Username"
+        android:layout_marginBottom="225dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/password_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:ems="10"
+        android:text="admin1234"
         android:hint="Password"
         android:inputType="textPassword"
         android:layout_alignTop="@+id/username_text"
@@ -40,7 +35,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText5"
+        android:layout_below="@+id/password_text"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
         android:background="@drawable/gradient"
@@ -66,5 +61,6 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="36dp" />
-    </RelativeLayout>
-<!--</ScrollView>-->
+
+</RelativeLayout>
+
