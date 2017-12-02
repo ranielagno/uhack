@@ -3,6 +3,7 @@ package com.ranielagno.uhack;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,23 @@ public class ActivityHomepage extends Fragment {
                 startActivity(intent);
             }
         });
+
+
+        Button seeSemButton = rootView.findViewById(R.id.seeSemButton);
+
+        seeSemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment nextFrag = new ActivityEvent();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, nextFrag);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        // Inflate the layout for this fragment
 
         return rootView;
     }
