@@ -17,10 +17,9 @@ public class ActivityHomepage extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_homepage, container, false);
 
+        Button practice = rootView.findViewById(R.id.pracInvButton);
 
-        Button btn_car_reg = rootView.findViewById(R.id.pracInvButton);
-
-        btn_car_reg.setOnClickListener(new View.OnClickListener() {
+        practice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -29,7 +28,6 @@ public class ActivityHomepage extends Fragment {
             }
         });
 
-        // Inflate the layout for this fragment
         return rootView;
     }
 
