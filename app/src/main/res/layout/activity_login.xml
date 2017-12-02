@@ -8,7 +8,8 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent" android:layout_height="match_parent"
-        android:background="@drawable/login_bg">
+        android:background="@drawable/login_bg"
+        >
 
 
         <EditText
@@ -57,12 +58,12 @@
         android:textColor="@android:color/holo_red_light" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
+            app:srcCompat="@drawable/laroin"
+            android:id="@+id/imageView"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="117dp"
-            app:srcCompat="@drawable/laroin"
-            android:id="@+id/imageView" />
+            android:layout_marginTop="36dp" />
     </RelativeLayout>
 <!--</ScrollView>-->
