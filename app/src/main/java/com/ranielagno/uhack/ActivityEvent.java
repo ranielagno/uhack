@@ -1,6 +1,5 @@
 package com.ranielagno.uhack;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,33 +9,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
- * Created by Makati on 12/2/2017.
+ * Created by Makati on 12/3/2017.
  */
 
-public class ActivityHomepage extends Fragment {
+public class ActivityEvent extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.activity_homepage, container, false);
+        View rootView = inflater.inflate(R.layout.activity_event, container, false);
 
-
-        Button btn_car_reg = rootView.findViewById(R.id.pracInvButton);
+        Button btn_car_reg = (Button) rootView.findViewById(R.id.loginButton);
 
         btn_car_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(getActivity(), GameActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button seeSemButton = rootView.findViewById(R.id.seeSemButton);
-
-        seeSemButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Fragment nextFrag = new ActivityEvent();
+                Fragment nextFrag = new ActivityHomepage();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nextFrag);
                 transaction.addToBackStack(null);
@@ -47,5 +33,6 @@ public class ActivityHomepage extends Fragment {
         // Inflate the layout for this fragment
         return rootView;
     }
+
 
 }
