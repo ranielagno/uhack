@@ -24,8 +24,12 @@ public class ActivityHomepage extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), GameActivity.class);
-                startActivity(intent);
+                Fragment fragment = new ActivitySetDay();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+
             }
         });
 
